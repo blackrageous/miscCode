@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2023-06-25T10:30:00Z",
+    "event": "Login",
+    "user": "john.doe",
+    "source_ip": "192.168.0.1"
+  },
+  {
+    "timestamp": "2023-06-25T10:35:00Z",
+    "event": "Logout",
+    "user": "john.doe",
+    "source_ip": "192.168.0.1"
+  },
+  {
+    "timestamp": "2023-06-25T11:15:00Z",
+    "event": "Login",
+    "user": "jane.smith",
+    "source_ip": "192.168.0.2"
+  },
+  {
+    "timestamp": "2023-06-25T11:20:00Z",
+    "event": "Logout",
+    "user": "jane.smith",
+    "source_ip": "192.168.0.2"
+  },
+  {
+    "timestamp": "2023-06-25T12:00:00Z",
+    "event": "Login",
+    "user": "john.doe",
+    "source_ip": "192.168.0.1"
+  },
+  {
+    "timestamp": "2023-06-25T12:05:00Z",
+    "event": "Logout",
+    "user": "john.doe",
+    "source_ip": "192.168.0.1"
+  }
+]
