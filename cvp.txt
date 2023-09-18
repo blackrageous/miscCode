@@ -1,0 +1,11 @@
+I have several concerns regarding the cluster heartbeat communication between the nodes in this setup. It's unusual to rely on a network outside of a LAN for cluster communication, especially when considering latency and quorum issues. This approach might introduce performance and reliability challenges.
+
+Moreover, I'm curious about how the various underlying processes, such as database writes, would be impacted by this configuration. Are devices bound to a primary node, or are they connected to the nearest node? This distinction can have significant implications for system performance and data consistency.
+
+( I noticed a warning in the virtual version of CVP regarding the use of snapshots. It's unclear whether this warning applies to cold snapshots as well, but it emphasizes the sensitivity of underlying processes like database writes).
+
+The cluster design clearly is regional, and according to the Arista guide (mentioned in the email) , it's recommended that nodes be located in the same physical location. In the future, adopting a COB (Continuity of Business) approach might be more suitable if the data is ephemeral. Long-term requirements could potentially be offloaded through APIs.
+
+Implementing a COB approach would involve two underlying processes: device discovery and configuring terminattr daemons to point to a cluster list of nodes or VIP if possible.  It's essential to consider whether a VIP (Virtual IP) can be used and the potential impact of the order of nodes in the list.
+
+Anoher major concern with any COB design is what happens to the underlying data during a cutover. It might be necessary to zero out or purge parts of the underlying data to ensure a seamless transition. Nonetheless, it's worth noting that the product might was not  designed with a COB in mind, so we should carefully evaluate the feasibility and potential risks before proceeding in that direction.
